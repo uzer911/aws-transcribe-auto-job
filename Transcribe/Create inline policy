@@ -1,0 +1,30 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "s3:ListBucket"
+            ],
+            "Resource": [
+                "arn:aws:s3:::transcript-911",
+                "arn:aws:s3:::transcript-911/*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "transcribe:StartCallAnalyticsJob",
+                "transcribe:GetCallAnalyticsJob"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "iam:PassRole",
+            "Resource": "arn:aws:iam::471613014056:role/service-role/AmazonTranscribeServiceRole-transcribe-role-1"
+        }
+    ]
+}
